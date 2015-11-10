@@ -17,7 +17,7 @@ get '/:filename' do
   yaml_path = "./data/#{params['filename']}.yaml"
   if File.exist?(yaml_path)
       data = YAML.load_file(yaml_path)
-      return data.to_json()
+      return data.to_json
   end
 
   status 400
@@ -29,6 +29,21 @@ post '/' do
   if body == ''
     status 400
   else
-    body.to_json()
+    data = JSON.parse(body)
+    data.to_json
   end
+end
+
+post '/:filename' do
+  body = request.body.read
+  json_path = "./data/#{params['filename']}.json"
+  if File.exist?(json_path)
+    status 400
+    "File #{json_path} already exists"
+  end
+  data = JSON.parse(body)
+  data = JSON.pretty_generate(data)
+  File.write(json_path, data)
+  status 201
+  "Created #{params['filename']}"
 end
