@@ -2,24 +2,24 @@
 It's simple json server. Please download to your host.
 ## usage
 ```
-ruby json_server.rb
+ruby json_server.rb -p <Port>
 ```
 
 ## endpoint
 ```
 # Reflection
-GET http://localhost:4567/?params1=one&params2=two
-POST http://localhost:4567/ (with body)
+GET http://<Host:Port>/?params1=one&params2=two
+POST http://<Host:Port>/ (with body)
 
 # Select
-GET http://localhost:4567/:resource_name
+GET http://<Host:Port>/:resource_name
 
 # Create
-POST http://localhost:4567/:resource_name (with body)
+POST http://<Host:Port>/:resource_name (with body)
 
 # Update
-PUT http://localhost:4567/:resource_name (with body)
+PUT http://<Host:Port>/:resource_name (with body)
 
 # Delete
-DELETE http://localhost:4567/:resource_name
+DELETE http://<Host:Port>/:resource_name
 ```
