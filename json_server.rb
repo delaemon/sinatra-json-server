@@ -47,3 +47,30 @@ post '/:filename' do
   status 201
   "Created #{params['filename']}"
 end
+
+put '/:filename' do
+  body = request.body.read
+  json_path = "./data/#{params['filename']}.json"
+  isFileExist = File.exist?(json_path)
+  data = JSON.parse(body)
+  data = JSON.pretty_generate(data)
+  File.write(json_path, data)
+  if isFileExist
+    status 200
+    "Updated #{params['filename']}"
+  else
+    status 201
+    "Created #{params['filename']}"
+  end
+end
+
+delete '/:filename' do
+  json_path = "./data/#{params['filename']}.json"
+  if File.exist?(json_path)
+    File.delete(json_path)
+    status 200
+    "Deleted #{params['filename']}"
+  else
+    status 204
+  end
+end
