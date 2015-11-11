@@ -3,6 +3,7 @@ It's simple json server.
 ## usage
 Please download to your host.
 ```
+gem install sinatra
 ruby json_server.rb -p <Port>
 ```
 
