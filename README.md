@@ -2,7 +2,7 @@
 It's simple json server. Please download to your host.
 ## usage
 ```
-ruby json_server,rb
+ruby json_server.rb
 ```
 
 ## endpoint
