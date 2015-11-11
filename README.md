@@ -1,10 +1,20 @@
 # sinatra-json-server
 It's simple json server.
-## usage
+## setup
 Please download to your host.
 ```
 gem install sinatra
 ruby json_server.rb -p <Port>
+```
+
+## usage
+```
+Usage: json_server [options]
+    -p port                          set the port (default is 4567)
+    -o addr                          set the host (default is localhost)
+    -e env                           set the environment (default is development)
+    -s server                        specify rack server/handler (default is thin)
+    -x                               turn on the mutex lock (default is off)
 ```
 
 ## endpoint
