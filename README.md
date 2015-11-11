@@ -1,6 +1,7 @@
 # sinatra-json-server
-It's simple json server. Please download to your host.
+It's simple json server.
 ## usage
+Please download to your host.
 ```
 ruby json_server.rb -p <Port>
 ```
