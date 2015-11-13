@@ -4,7 +4,6 @@ It's simple json server.
 Please download to your host.
 ```
 gem install sinatra
-ruby json_server.rb -p <Port>
 ```
 
 ## usage
